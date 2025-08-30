@@ -5,12 +5,19 @@ const dotenv = require("dotenv").config(); //this allows me to use my .env value
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const conntectToDB = require("./config/db");
+const cors = require("cors");
+const lolRoutes = require("./routes/");
+const authRoutes = require("./routes/")
 
 // Middleware
+app.use(cors());
+app.use(express.json());
 app.use(express.static("public")); //all static files are in the public folder
 app.use(express.urlencoded({ extended: false })); // this will allow us to see the data being sent in the POST or PUT
 app.use(methodOverride("_method")); // Changes the method based on the ?_method
 app.use(morgan("dev")); // logs the requests as they are sent to our sever in the terminal
+app.use("/lolguides", lolRoutes);
+app.use("/user", authRoutes)
 
 // connect to database
 conntectToDB();
