@@ -5,10 +5,10 @@ const LOLGuideSchema = new Schema({
     type: String,
     required: true,
   },
-  username: {
-    type: Schema.TypesObjectId,
-    ref: "User",
-  },
+//   username: {
+//     type: Schema.TypesObjectId,
+//     ref: "User",
+//   },
 });
 
 const LOLGuide = model("LOLGuide", LOLGuideSchema);
