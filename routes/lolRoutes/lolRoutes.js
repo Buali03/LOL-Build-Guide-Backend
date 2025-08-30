@@ -4,5 +4,6 @@ const secureRoute = require("../../middleware/secureRoute");
 const lolGuideController = require("../../controllers/lolGuideController");
 
 router.post("/create", lolGuideController.createLOLGuide);
+router.get("/", lolGuideController.showLOLGuide);
 
 module.exports = router;

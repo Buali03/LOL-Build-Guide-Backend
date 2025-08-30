@@ -14,6 +14,20 @@ const createLOLGuide = async (req, res) => {
   }
 };
 
+const showLOLGuide = async (req, res) => {
+  try {
+    const allLOLGuide = await LOLGuide.find();
+    if (allLOLGuide.length) {
+      res.status(200).json(allLOLGuide);
+    } else {
+      res.sendStatus(204);
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   createLOLGuide,
+  showLOLGuide,
 };
