@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const conntectToDB = require("./config/db");
 const cors = require("cors");
 const lolRoutes = require("./routes/lolRoutes/lolRoutes");
+const authRoutes = require("./routes/user/userRoutes");
 
 // Middleware
 app.use(cors());
@@ -16,7 +17,7 @@ app.use(express.urlencoded({ extended: false })); // this will allow us to see t
 app.use(methodOverride("_method")); // Changes the method based on the ?_method
 app.use(morgan("dev")); // logs the requests as they are sent to our sever in the terminal
 app.use("/lolguides", lolRoutes);
-// app.use("/user", authRoutes);
+app.use("/user", authRoutes);
 
 // connect to database
 conntectToDB();
