@@ -6,7 +6,7 @@ const createLOLGuide = async (req, res) => {
     console.log("req.body: ", req.body);
     const createdLOLGuide = await LOLGuide.create({
       ...req.body,
-      //   user: req.user.id,
+      user: req.user.id,
     });
     res.status(201).json(createdLOLGuide);
   } catch (err) {
