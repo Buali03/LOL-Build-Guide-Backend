@@ -16,7 +16,7 @@ const createLOLGuide = async (req, res) => {
 
 const allLOLGuide = async (req, res) => {
   try {
-    const allLOLGuide = await LOLGuide.find();
+    const allLOLGuide = await LOLGuide.find().populate("username");
     if (allLOLGuide.length) {
       res.status(200).json(allLOLGuide);
     } else {
