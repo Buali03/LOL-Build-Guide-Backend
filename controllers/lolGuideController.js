@@ -29,7 +29,9 @@ const allLOLGuide = async (req, res) => {
 
 const showLOLGuide = async (req, res) => {
   try {
-    const oneLOLGuide = await LOLGuide.findById(req.params.id);
+    const oneLOLGuide = await LOLGuide.findById(req.params.id).populate(
+      "username"
+    );
     if (oneLOLGuide) {
       res.status(200).json(oneLOLGuide);
     } else {
