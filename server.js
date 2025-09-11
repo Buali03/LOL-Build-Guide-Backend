@@ -10,7 +10,12 @@ const lolRoutes = require("./routes/lolRoutes/lolRoutes");
 const authRoutes = require("./routes/user/userRoutes");
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://https://hexbuildcraft.netlify.app/",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.static("public")); //all static files are in the public folder
 app.use(express.urlencoded({ extended: false })); // this will allow us to see the data being sent in the POST or PUT
