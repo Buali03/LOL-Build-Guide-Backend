@@ -16,14 +16,14 @@ The goal of this website is to provide a community-driven hub for LoL players. I
 </p>
 </br>
 <h2>Website Preview</h2>
-<img src="/public/sign-up.png">
+<img src="./sign-up.png">
 <p>
 <b>Sign up Page:</b> This page allows users to create their own user for the website.
 </p>
 <p>
 <b>Login Page:</b> This page allows users to login to their account for the website.
 </p>
-<img src="/public/PagePic.png">
+<img src="./PagePic.png">
 <p>
 <b>Champions Page:</b> This page includes a list of all champions to direct to their detailed pages.
 </p>
