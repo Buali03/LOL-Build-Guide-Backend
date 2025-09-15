@@ -12,7 +12,7 @@ const authRoutes = require("./routes/user/userRoutes");
 // Middleware
 app.use(
   cors({
-    origin: "https://hexbuildcraft.netlify.app/",
+    origin: "https://hexbuildcraft.netlify.app",
     credentials: true,
   })
 );
